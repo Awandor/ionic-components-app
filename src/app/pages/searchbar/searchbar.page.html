@@ -1,0 +1,14 @@
+<app-header title="searchbar"></app-header>
+
+
+<ion-content class="ion-padding">
+
+    <ion-searchbar placeholder="Search something" inputmode="text" debounce="250" (ionChange)="onSearch($event)"></ion-searchbar>
+
+    <ion-list>
+        <ion-item *ngFor="let album of albumes | filtro: textoBuscar: 'title'">
+            <ion-label>{{album.title}}</ion-label>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

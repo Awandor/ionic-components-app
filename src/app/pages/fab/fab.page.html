@@ -1,0 +1,54 @@
+<app-header title="fab"></app-header>
+
+<ion-content class="ion-padding">
+
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ion-list>
+        <ion-item *ngFor="let item of data; let i=index">Item {{i + 1}}</ion-item>
+    </ion-list>
+
+    <!-- fab placed to the bottom end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="warning">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button>
+                <ion-icon name="logo-vimeo" color="vimeo"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="start">
+            <ion-fab-button>
+                <ion-icon name="logo-youtube" color="youtube"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+
+    <!-- fab placed to the bottom sart -->
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button color="success">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button>
+                <ion-icon name="logo-vimeo" color="vimeo"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button>
+                <ion-icon name="logo-youtube" color="youtube"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-title>This is the footer</ion-title>
+    </ion-toolbar>
+</ion-footer>

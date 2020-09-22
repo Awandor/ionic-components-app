@@ -1,0 +1,30 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text="Back" color="primary" mode="ios"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Alert</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<!-- <app-header title="{{title || 'alert'}}"></app-header> -->
+<!-- Ambas funcionan -->
+<app-header [title]="title || 'alert'"></app-header>
+
+<ion-content class="ion-padding">
+
+    <ion-button color="primary" expand="full" (click)="presentAlert()">Simple Alert</ion-button>
+
+    <ion-button color="primary" expand="full" (click)="presentAlertMultipleButtons()">Alert with multiple choices</ion-button>
+
+    <ion-button color="primary" expand="full" (click)="presentAlertConfirm()">Alert with Confirm</ion-button>
+
+    <ion-button color="primary" expand="full" (click)="presentAlertPrompt()">Alert with Prompt</ion-button>
+
+    <ion-button color="primary" expand="full" (click)="presentAlertRadio()">Alert with Radio buttons</ion-button>
+
+    <ion-button color="primary" expand="full" (click)="presentAlertCheckbox()">Alert with Checkboxes</ion-button>
+
+    <ion-button color="secondary" expand="full" (click)="presentAlertChangeTitle()">Alert Change Page Title</ion-button>
+
+</ion-content>

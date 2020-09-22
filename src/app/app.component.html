@@ -1,3 +1,39 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+    <!-- can be "xs", "sm", "md", "lg", or "xl" -->
+
+    <!-- md = (min-width: 768px) -->
+
+    <!-- Debemos añadir contentId="main" a ion-split-pane -->
+    <ion-split-pane when="md" contentId="main">
+
+        <ion-menu side="start" menuId="first" contentId="main">
+            <ion-header>
+                <ion-toolbar color="primary">
+                    <ion-title>Start Menu</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <ion-list>
+
+                    <!-- Para que se veo el menú usando ion-split-pane tenemos que añadir autoHide="false" -->
+                    <ion-menu-toggle *ngFor="let componente of componentes | async" autoHide="false">
+
+                        <ion-item [routerLink]="componente.redirectTo">
+                            {{componente.name}}
+                            <ion-icon [name]="componente.icon" slot="start" color="primary"></ion-icon>
+                        </ion-item>
+
+                    </ion-menu-toggle>
+
+                </ion-list>
+            </ion-content>
+        </ion-menu>
+
+        <!-- IMPORTANTE añadir un id al componente que coincida con contentId -->
+
+        <ion-router-outlet id="main"></ion-router-outlet>
+
+    </ion-split-pane>
+
 </ion-app>

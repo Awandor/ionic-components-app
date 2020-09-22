@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text="Back" color="primary"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-capitalize">Buttons</ion-title>
+        <ion-buttons slot="end">
+            <ion-button color="primary">
+                <ion-icon name="aperture-outline"></ion-icon>
+            </ion-button>
+
+            <ion-button color="danger">
+                <ion-icon name="heart"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <!-- Botones normales -->
+
+    <ion-button expand="full" color="primary" size="small">
+        Small
+    </ion-button>
+
+    <ion-button expand="full" color="secondary" size="default">
+        Default
+    </ion-button>
+
+    <ion-button expand="full" color="success" size="large">
+        Large
+    </ion-button>
+
+    <!-- Anchor -->
+
+    <ion-button class="mt-2" expand="full" color="medium" routerLink="/alert">
+        Link
+    </ion-button>
+
+    <!-- ion-row + ion-col -->
+
+    <ion-row class="mt-2">
+        <ion-col>
+            <ion-button expand="full" color="medium" routerLink="/alert">
+                Link
+            </ion-button>
+        </ion-col>
+        <ion-col>
+            <ion-button expand="full" color="medium" routerLink="/alert">
+                Link
+            </ion-button>
+        </ion-col>
+    </ion-row>
+
+    <!-- Fill -->
+
+    <ion-row class="mt-2">
+        <ion-col>
+            <ion-button color="secondary" size="small" fill="clear">
+                Fill Clear
+            </ion-button>
+            <ion-button color="secondary" size="small" fill="outline">
+                Fill Outline
+            </ion-button>
+            <ion-button color="secondary" size="small" fill="solid">
+                Fill Solid
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-content>

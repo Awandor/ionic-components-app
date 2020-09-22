@@ -1,0 +1,22 @@
+<ion-header no-border translucent>
+    <ion-toolbar>
+
+        <ion-title class="ion-text-capitalize">modal content</ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button (click)="salirSinDatos()" expand="block">
+                <ion-icon name="close" color="primary"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    Hello world {{nombre}}
+
+    <ion-button (click)="salirSinDatos()" expand="block">Cancel</ion-button>
+
+    <ion-button (click)="salirConDatos()" expand="block">Send</ion-button>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+
+        <!-- <ion-buttons slot="start">
+            <ion-button (click)="mostrarMenu()">
+                <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons> -->
+
+        <!-- Hay una manera más fácil de manejar el menu -->
+
+        <ion-buttons slot="start">
+            <ion-menu-button menu="first" color="primary"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title color="primary">Ionic Components</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-button routerLink="/alert">Alert</ion-button>
+    <ion-button routerLink="/action-sheet">Action Sheet</ion-button> -->
+
+    <!-- Hemos cambiado la manera de cargar componentes y ahora es un observable así que tenemos que pasarlo por el pipe async -->
+    <ion-list>
+        <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo">
+            <!-- <ion-icon name="{{c.icon}}" slot="start"></ion-icon> -->
+            <!-- Funciona los dos maneras -->
+            <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+            {{c.name}}
+        </ion-item>
+    </ion-list>
+</ion-content>

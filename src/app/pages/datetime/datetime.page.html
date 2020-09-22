@@ -1,0 +1,40 @@
+<app-header title="datetime"></app-header>
+
+<ion-content class="ion-padding">
+
+    <ion-list-header>Birth data</ion-list-header>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Date of Birth</ion-label>
+
+            <!-- <ion-datetime placeholder="Calendar" value="{{fechaNacimiento | date: 'yyyy-MM-dd'}}" display-format="DD MMMM YYYY" cancelText="My own cancel text" [(ngModel)]="fechaNacimiento" (ionChange)="cambioFecha($event)"></ion-datetime> -->
+
+            <!-- Datetime no acepta el formato de fecha de javascript, debe de convertirse a ISO 8601 -->
+            <ion-datetime placeholder="Calendar" display-format="DD MMMM YYYY" cancelText="My own cancel text" [ngModel]="fechaNacimiento.toISOString()" (ionChange)="cambioFecha($event)"></ion-datetime>
+        </ion-item>
+    </ion-list>
+
+    <ion-list-header>Restrictions</ion-list-header>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Min / Max</ion-label>
+
+            <ion-datetime placeholder="Calendar" display-format="YYYY MMMM DD" min="2019-01-01" max="2021-12-31"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Years</ion-label>
+
+            <ion-datetime placeholder="YYYY" display-format="YYYY" min="2019" max="2021" value="2020"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Custom Options</ion-label>
+
+            <ion-datetime [pickerOptions]="customPickerOptions" [(ngModel)]="customDate"></ion-datetime>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
